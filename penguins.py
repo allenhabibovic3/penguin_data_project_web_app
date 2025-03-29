@@ -6,7 +6,7 @@ def install_package(package):
 
 # Install setuptools
 install_package("setuptools")
-
+install_package("distutils")
 df = pd.read_csv("penguin_data.csv")
 
 categorical = ['sex', 'island']
