@@ -2,14 +2,14 @@ import pandas as pd
 import subprocess
 import sys
 def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    subprocess.check_call(["python3" , "-m", "pip", "install", package])
 
 # Install setuptools
 install_package("setuptools")
 install_package("distutils")
 
 import distutils.core
-import setuptools
+#import setuptools
 df = pd.read_csv("penguin_data.csv")
 
 categorical = ['sex', 'island']
