@@ -1,6 +1,5 @@
-up1streamlit==1.13.0
+install streamlit==1.13.0
 pandas==1.5.0
 numpy==1.23.3
 scikit-learn==1.1.2
-setuptools
-distutils
+
