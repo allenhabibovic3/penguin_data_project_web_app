@@ -9,6 +9,7 @@ install_package("setuptools")
 install_package("distutils")
 
 import distutils.core
+import setuptools
 df = pd.read_csv("penguin_data.csv")
 
 categorical = ['sex', 'island']
