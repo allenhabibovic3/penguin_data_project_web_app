@@ -4,6 +4,18 @@ import numpy as np
 import pickle
 from sklearn.ensemble import RandomForestClassifier
 
+import subprocess
+import sys
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Install setuptools
+install_package("setuptools")
+install_package("distutils")
+
+import distutils.core
+import setuptools
+
 
 st.write("""
 # Penguin Prediction App
