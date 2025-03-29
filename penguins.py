@@ -1,15 +1,25 @@
 import pandas as pd
+
+
 import subprocess
 import sys
-def install_package(package):
-    subprocess.check_call(["python3" , "-m", "pip", "install", package])
 
-# Install setuptools
-install_package("setuptools")
-install_package("distutils")
+def install_distutils():
+  """Attempts to install the 'distutils' package (though it's deprecated)."""
+  try:
+    # Attempt to install, but distutils is now part of setuptools, or removed.
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'setuptools'])
+    print("setuptools installed or already present. distutils functionality included.")
 
-import distutils.core
-#import setuptools
+  except subprocess.CalledProcessError as e:
+    print(f"Error installing setuptools: {e}")
+    print("distutils is deprecated and may not be installable directly.")
+    print("It is typically included in setuptools, or is part of the standard library in older python versions.")
+    print("Consider updating your dependencies to avoid reliance on distutils.")
+
+install_distutils()
+
+import setuptools
 df = pd.read_csv("penguin_data.csv")
 
 categorical = ['sex', 'island']
