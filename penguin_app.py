@@ -13,8 +13,8 @@ def install_package(package):
 install_package("setuptools")
 install_package("distutils")
 
-import distutils.core
-#import setuptools
+import distutils
+import setuptools
 
 
 st.write("""
