@@ -1,7 +1,11 @@
 import pandas as pd
 import subprocess
 import sys
+def install_package(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
+# Install setuptools
+install_package("setuptools")
 
 df = pd.read_csv("penguin_data.csv")
 
